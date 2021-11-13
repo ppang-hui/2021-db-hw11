@@ -1,0 +1,31 @@
+{{!-- 넘겨받은 title을 표시 --}}
+<h1>{{ title }}</h1>
+{{!-- 테이블 형태로 정보를 보여줌 --}}
+<table>
+<tr>
+<td>Dname</td>
+<td>Dnumber</td>
+</tr>
+{{!-- department 테이블에 있는 튜플의 개수만큼 반복 --}}
+{{#each department}}
+{{!-- post 형식의 form --}}
+<form method="post">
+<tr>
+<td>{{Dname}}</td>
+<td>{{Dnumber}}</td>
+<td style="border: none; margin-left: 10px;">
+{{!-- 삭제버튼 --}}
+<button
+style="margin-left: 10px;"
+name='delBtn'
+type="submit"
+value="{{Dname}}"
+formaction="/delete/department"
+>
+삭제
+</button>
+</td>
+</tr>
+</form>
+{{/each}}
+</table>

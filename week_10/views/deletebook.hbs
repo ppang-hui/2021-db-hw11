@@ -1,0 +1,32 @@
+<h1>{{ title }}</h1>
+{{!-- 테이블 형태로 정보를 보여줌 --}}
+<table>
+<tr>
+<td>bookname</td>
+<td>booknumber</td>
+<td>writer</td>
+</tr>
+{{!-- book 테이블에 있는 튜플의 개수만큼 반복 --}}
+{{#each book}}
+{{!-- post 형식의 form --}}
+<form method="post">
+<tr>
+<td>{{bookname}}</td>
+<td>{{booknumber}}</td>
+<td>{{writer}}</td>
+<td style="border: none; margin-left: 10px;">
+{{!-- 삭제버튼 --}}
+<button
+style="margin-left: 10px;"
+name='delBtn'
+type="submit"
+value="{{bookname}}"
+formaction="/delete/book"
+>
+삭제
+</button>
+</td>
+</tr>
+</form>
+{{/each}}
+</table>

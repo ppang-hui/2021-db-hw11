@@ -1,0 +1,31 @@
+{{!-- 정보를 보여주는 페이지 --}}
+<h1>{{ title }}</h1>
+<table>
+<tr>
+<td>Dname</td>
+<td>Dnumber</td>
+</tr>
+{{!-- department 테이블의 튜플 수 만큼 반복 --}}
+{{#each department}} 
+<tr>
+<td>{{Dname}}</td>
+<td>{{Dnumber}}</td>
+</tr>
+{{/each}}
+</table>
+<br>
+<h1>{{title2}}</h1>
+<table>
+    <tr>
+    <td>bookname</td>
+    <td>booknumber</td>
+    <td>writer</td>
+</tr>
+{{#each book}}
+<tr>
+    <td>{{bookname}}</td>
+    <td>{{booknumber}}</td>
+    <td>{{writer}}</td>
+</tr>
+{{/each}}
+</table>
